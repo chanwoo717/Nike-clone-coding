@@ -1,0 +1,281 @@
+@import url('./reset.css');
+@import '../../../scss/mixin';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+$mobile : 480px;
+
+@mixin res($n) {
+    @media screen and (max-width:$n) {
+        @content;
+    }
+}
+
+// @include res($mobile){
+//     background-color: black;
+//     width: 100%;
+//     position: fixed;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// } EXAMPLE put where needed/////
+
+body {
+    font-family: 'Inter', sans-serif;
+
+    header {
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            margin: 10px 40px;
+
+            @media screen and (max-width : 768px) {
+                margin: 0 auto;
+            }
+
+            // img {}
+        }
+
+        .brand {
+            text-align: center;
+
+            h1 {
+                font-size: 42px;
+            }
+
+            nav {
+                margin-top: 30px;
+                width: 100%;
+
+                a {
+                    font-size: 22px;
+                    margin-right: 30px;
+                    margin-left: 30px;
+                    @media screen and (max-width : 768px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .icon {
+
+            margin: 10px 40px;
+
+            a {
+                margin: 15px;
+
+                // img {}
+            }
+        }
+        .searchTool{
+            display: none;
+            input {margin-right: 10px;}
+            button{padding: 0;
+                // img{}
+            }
+        }
+        .searchTool.active{
+            display: flex;
+            padding: 0;
+            margin-right: 10px;
+        }
+    }
+
+    .disapp2 {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        img{width: 60%;}
+    }
+
+    footer {
+        background-color: white;
+        font-size: 12px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: normal;
+
+        .topFoot {
+            width: 100%;
+            background-color: #D9D9D9;
+            padding: 20px;
+
+            p {
+                margin-left: 15%;
+                @media screen and (max-width : 1150px) {
+                    margin-left: 5%;
+                }
+            }
+        }
+
+        .botFoot {
+            width: 100%;
+            padding: 20px;
+
+            p {
+                margin-left: 15%;
+                padding: 10px 0;
+                @media screen and (max-width : 1150px) {
+                    margin-left: 5%;
+                }
+            }
+        }
+
+        .iconFoot {
+            position: absolute;
+            margin-left: 80%;
+
+            a {
+                margin: 10px;
+                justify-content: space-between;
+
+                // img {}
+            }
+            @media screen and (max-width : 1150px) {
+                position: sticky;
+            }
+            @media screen and (max-width : 848px) {
+                display: none;
+            }
+        }
+
+        .appearFoot {
+            display: none;
+            width: 100%;
+            background-color: #D9D9D9;
+            text-align: center;
+            padding: 20px;
+
+            p:nth-child(1) {
+                font-size: 12px;
+            }
+
+            p:nth-child(3) {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+
+a:link,
+a:hover,
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+@media screen and (max-width : 979px) {
+
+    header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        display: block;
+        position: fixed;
+        left: 15px;
+        top: 10px;
+    }
+
+    .logo img {
+        width: 30%;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .icon.active {
+        display: flex;
+        margin: auto;
+    }
+
+    body header .brand h1 {
+        font-size: 20px;
+        padding: 8px 12px;
+        margin-top: 10px;
+    }
+
+    .brand {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand nav {
+        display: none;
+        flex-direction: column;
+        transition: 1s;
+    }
+
+    .brand nav a {
+        margin: 5px;
+    }
+
+    .brand nav.active {
+        display: flex;
+        transform: translateY(-20%);
+    }
+
+    nav a:hover {
+        color: white;
+        background-color: black;
+        padding: 5px 30px;
+        border-radius: 6px;
+    }
+    .disapp2.active {
+        display: block;
+        transform: rotateX('angle');
+    }
+    .searchTool input{
+        width: 250px;
+        height: 30px;
+        padding: 5px;
+        margin-right: 10px;
+    }
+    .searchTool button{
+        height: 30px;
+        padding: 0;
+        background-color: oldlace;
+        border-radius: 4px;
+    }
+    .searchTool button img{
+        width: 100%;
+        height: 100%;
+        color: white;
+    }
+    .searchTool.active{
+        display: flex;
+    }
+    .topFoot {
+        display: none;
+    }
+
+    .botFoot {
+        display: none;
+    }
+
+    .iconFoot {
+        display: none;
+    }
+
+    body footer .appearFoot {
+        display: block;
+    }
+
+}
+
+;
