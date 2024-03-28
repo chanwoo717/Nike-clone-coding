@@ -74,12 +74,18 @@ body {
         }
         .searchTool{
             display: none;
-            input {margin-right: 10px;}
+            input {
+                margin-right: 10px;
+                border: 1px solid rgba($color: #000000, $alpha: 0.2);
+                border-radius: 10px;
+            }
             button{padding: 0;
-                // img{}
             }
         }
         .searchTool.active{
+            >button{
+                border: none;
+            }
             display: flex;
             padding: 0;
             margin-right: 10px;
